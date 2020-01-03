@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ctsaing.mapdemo">
+
+
+    //使用网络数据权限
+    <uses-permission android:name="android.permission.INTERNET"/>
+    //获得当前网络状态权限，根据网络状态切换地图的加载模式
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    //获得读写设备外部存储的权限
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    //获取设备wifi状态
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    //网络定位权限
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    //GPS定位权限
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    //屏幕锁定后台仍然运行
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BaiduMapDemo"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".MapApplication">
+
+        <meta-data android:name="com.baidu.lbsapi.API_KEY"
+            android:value="dwvwgUmipjwOC4YPvcWoYGh4bUYLXQwj"/>
+        
+        <service android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
